@@ -10,3 +10,19 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.App {
+    text-align: center;
+}
+li {
+    border:1px solid gray;
+    list-style: none;
+    
+}
+input {
+    border: none;
+    width: 100%;
+}
+li i {
+    text-align: justify;
+    justify-content: space-between;
+}
