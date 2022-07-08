@@ -2,7 +2,7 @@ import React from "react";
 
 //include images into your bundle
 
-import List from "/workspace/react-hello/src/js/component/ToDoList.jsx";
+import List from "./ToDoList.jsx";
 import Layout from "./Layout.jsx";
 import Header from "./Header.jsx";
 

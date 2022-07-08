@@ -11,10 +11,8 @@ const List = () => {
 
   return (
     <div className="container-fluid " id="background">
-    <div>&nbsp;</div>
-    <div>&nbsp;</div>
-    <div>&nbsp;</div>
-    <div className="container">
+   
+    <div className="container mt-5">
       <div className="" id="header"><i class="fa-solid fa-clipboard-list"><h3>To Do:</h3></i></div>
       <div>
         <ul>
@@ -26,7 +24,7 @@ const List = () => {
                 onChange={(e) => setInputValue(e.target.value)}
                 value={inputValue}
                 onKeyPress={(e) => {
-                  if (e.key === "Enter") {
+                  if (e.key === "Enter" && inputValue != "") {
                     setTodos(todos.concat(inputValue));
                     setInputValue("");
                   }
@@ -37,15 +35,16 @@ const List = () => {
           </div>
           <div className="" id="dropdown">
             {todos.map((item, index) =>
-              <li id="icon">
-                {item}&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash-can" onClick={() =>
+              <li id="icon" className="d-flex justify-content-between p-1 align-items-center" >
+                <span>{item}
+                  </span><i class="fa-solid fa-trash-can" onClick={() =>
                   setTodos(todos.filter((t, currentIndex) => index != currentIndex))}></i>
               </li>)}
           </div>
 
         </ul>
       </div>
-      <div className="" id="footer">Remaining Tasks  <strong id="number">_0{todos.length}</strong></div>
+      <div className="" id="footer">Remaining Tasks : <strong id="number">{todos.length}</strong></div>
       <div>&nbsp;</div>
     </div>
   </div>
